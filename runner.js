@@ -41,6 +41,8 @@ module.exports = class Runner {
 
         const name = path.basename(location, '.gcode')
         fs.writeFileSync(`./output/${speed}-${name}.json`, JSON.stringify({
+          name: name,
+          speed: speed,
           raw: this.dosimeter.raw,
           summary: this.dosimeter.summary,
         }))
