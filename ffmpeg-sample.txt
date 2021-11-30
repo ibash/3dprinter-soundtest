@@ -1,0 +1,87 @@
+❯ ffmpeg -f avfoundation -nostats -i ":1" -filter_complex ebur128 -f null -
+ffmpeg version 4.4.1 Copyright (c) 2000-2021 the FFmpeg developers
+  built with Apple clang version 13.0.0 (clang-1300.0.29.3)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/4.4.1_2 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libbluray --enable-libdav1d --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-avresample --enable-videotoolbox
+  libavutil      56. 70.100 / 56. 70.100
+  libavcodec     58.134.100 / 58.134.100
+  libavformat    58. 76.100 / 58. 76.100
+  libavdevice    58. 13.100 / 58. 13.100
+  libavfilter     7.110.100 /  7.110.100
+  libavresample   4.  0.  0 /  4.  0.  0
+  libswscale      5.  9.100 /  5.  9.100
+  libswresample   3.  9.100 /  3.  9.100
+  libpostproc    55.  9.100 / 55.  9.100
+Input #0, avfoundation, from ':1':
+  Duration: N/A, start: 793154.444479, bitrate: 1536 kb/s
+  Stream #0:0: Audio: pcm_f32le, 48000 Hz, mono, flt, 1536 kb/s
+[Parsed_ebur128_0 @ 0x144823c20] Summary:
+
+  Integrated loudness:
+    I:         -70.0 LUFS
+    Threshold:   0.0 LUFS
+
+  Loudness range:
+    LRA:         0.0 LU
+    Threshold:   0.0 LUFS
+    LRA low:     0.0 LUFS
+    LRA high:    0.0 LUFS
+Stream mapping:
+  Stream #0:0 (pcm_f32le) -> ebur128
+  ebur128 -> Stream #0:0 (pcm_s16le)
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    encoder         : Lavf58.76.100
+  Stream #0:0: Audio: pcm_s16le, 48000 Hz, mono, s16, 768 kb/s
+    Metadata:
+      encoder         : Lavc58.134.100 pcm_s16le
+[Parsed_ebur128_0 @ 0x144855310] t: 0.0999792  TARGET:-23 LUFS    M:-120.7 S:-120.7     I: -70.0 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 0.221312   TARGET:-23 LUFS    M:-120.7 S:-120.7     I: -70.0 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 0.331979   TARGET:-23 LUFS    M:-120.7 S:-120.7     I: -70.0 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 0.442646   TARGET:-23 LUFS    M: -45.2 S:-120.7     I: -45.2 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 0.563979   TARGET:-23 LUFS    M: -45.3 S:-120.7     I: -45.2 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 0.674646   TARGET:-23 LUFS    M: -45.8 S:-120.7     I: -45.4 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 0.795979   TARGET:-23 LUFS    M: -45.5 S:-120.7     I: -45.4 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 0.895979   TARGET:-23 LUFS    M: -45.1 S:-120.7     I: -45.4 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 1.00665    TARGET:-23 LUFS    M: -44.8 S:-120.7     I: -45.3 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 1.11731    TARGET:-23 LUFS    M: -43.8 S:-120.7     I: -45.0 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 1.21731    TARGET:-23 LUFS    M: -43.9 S:-120.7     I: -44.9 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 1.31731    TARGET:-23 LUFS    M: -44.7 S:-120.7     I: -44.9 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 1.41731    TARGET:-23 LUFS    M: -45.7 S:-120.7     I: -44.9 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 1.51731    TARGET:-23 LUFS    M: -48.7 S:-120.7     I: -45.2 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 1.63865    TARGET:-23 LUFS    M: -51.2 S:-120.7     I: -45.4 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 1.74931    TARGET:-23 LUFS    M: -51.8 S:-120.7     I: -45.7 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 1.87065    TARGET:-23 LUFS    M: -49.7 S:-120.7     I: -45.9 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 1.98131    TARGET:-23 LUFS    M: -49.5 S:-120.7     I: -46.1 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 2.09198    TARGET:-23 LUFS    M: -49.7 S:-120.7     I: -46.2 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 2.20265    TARGET:-23 LUFS    M: -50.3 S:-120.7     I: -46.4 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 2.32398    TARGET:-23 LUFS    M: -53.8 S:-120.7     I: -46.6 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 2.43465    TARGET:-23 LUFS    M: -53.9 S:-120.7     I: -46.8 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 2.54531    TARGET:-23 LUFS    M: -54.5 S:-120.7     I: -47.0 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 2.65598    TARGET:-23 LUFS    M: -54.1 S:-120.7     I: -47.1 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 2.77731    TARGET:-23 LUFS    M: -51.4 S:-120.7     I: -47.3 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 2.88798    TARGET:-23 LUFS    M: -47.2 S:-120.7     I: -47.3 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 2.99865    TARGET:-23 LUFS    M: -46.4 S:-120.7     I: -47.2 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 3.10931    TARGET:-23 LUFS    M: -45.6 S:-120.7     I: -47.1 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 3.23065    TARGET:-23 LUFS    M: -44.9 S:-120.7     I: -47.0 LUFS       LRA:   0.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 3.34131    TARGET:-23 LUFS    M: -46.5 S: -46.8     I: -47.0 LUFS       LRA:  20.0 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 3.45198    TARGET:-23 LUFS    M: -46.9 S: -47.0     I: -47.0 LUFS       LRA:  20.1 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 3.56265    TARGET:-23 LUFS    M: -47.3 S: -47.1     I: -47.0 LUFS       LRA:  20.1 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 3.67331    TARGET:-23 LUFS    M: -48.9 S: -47.3     I: -47.1 LUFS       LRA:  20.2 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 3.78398    TARGET:-23 LUFS    M: -49.0 S: -47.4     I: -47.1 LUFS       LRA:   0.5 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 3.89465    TARGET:-23 LUFS    M: -48.2 S: -47.4     I: -47.1 LUFS       LRA:   0.6 LU
+[Parsed_ebur128_0 @ 0x144855310] t: 4.00531    TARGET:-23 LUFS    M: -47.3 S: -47.4     I: -47.1 LUFS       LRA:   0.6 LU
+size=N/A time=00:00:04.05 bitrate=N/A speed=0.997x
+video:0kB audio:342kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_ebur128_0 @ 0x144855310] Summary:
+
+  Integrated loudness:
+    I:         -47.1 LUFS
+    Threshold: -57.1 LUFS
+
+  Loudness range:
+    LRA:         0.6 LU
+    Threshold: -67.2 LUFS
+    LRA low:   -47.4 LUFS
+    LRA high:  -46.8 LUFS
+Exiting normally, received signal 2.
