@@ -1,0 +1,7 @@
+G0 X10 Y10 ; box
+G0 X10 Y250
+G0 X250 Y250
+G0 X250 Y10
+G0 X10 Y10
+
+M400 ; wait for everything
