@@ -1,5 +1,6 @@
 const Client = require('./client.js')
 const Dosimeter = require('./dosimeter.js')
+const csv = require('fast-csv')
 const fs = require('fs')
 const glob = require('glob')
 const path = require('path')
@@ -48,6 +49,8 @@ module.exports = class Runner {
         }))
       }
     }
+
+    await this.exportCsvs()
   }
 
   async upload() {
@@ -65,5 +68,44 @@ module.exports = class Runner {
         this.files.tests.push(location)
       }
     }
+  }
+
+  exportCsvs() {
+    const files = glob.sync('output/*.json')
+
+    const rawIn = csv.format()
+    const rawOut = fs.createWriteStream(path.resolve(__dirname, 'output', 'raw.csv'))
+    rawIn.pipe(rawOut)
+    rawIn.write(['name', 'speed', 't', 'target', 'm', 's', 'i', 'lra'])
+
+    const summaryIn = csv.format()
+    const summaryOut = fs.createWriteStream(path.resolve(__dirname, 'output', 'summary.csv'))
+    summaryIn.pipe(summaryOut)
+    summaryIn.write(['name', 'speed', 'integratedLoudness.i', 'integratedLoudness.threshold', 'loudnessRange.lra', 'loudnessRange.threshold', 'loudnessRange.lraLow', 'loudnessRange.lraHigh'])
+
+    for (const file of files) {
+      const content = require(path.resolve('.', file))
+      for (const raw of content.raw) {
+        rawIn.write([content.name, content.speed, raw.t, raw.target, raw.m, raw.s, raw.i, raw.lra])
+      }
+
+      summaryIn.write([
+        content.name, content.speed,
+        content.summary.integratedLoudness.i,
+        content.summary.integratedLoudness.threshold,
+        content.summary.loudnessRange.lra,
+        content.summary.loudnessRange.threshold,
+        content.summary.loudnessRange.lraLow,
+        content.summary.loudnessRange.lraHigh
+      ])
+    }
+
+    rawIn.end()
+    summaryIn.end()
+
+    return Promise.all([
+      new Promise((resolve) => rawOut.on('finish', resolve)),
+      new Promise((resolve) => summaryOut.on('finish', resolve))
+    ])
   }
 }

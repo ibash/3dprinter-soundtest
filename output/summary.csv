@@ -1,0 +1,3 @@
+name,speed,integratedLoudness.i,integratedLoudness.threshold,loudnessRange.lra,loudnessRange.threshold,loudnessRange.lraLow,loudnessRange.lraHigh
+test1,1200,-38.7,-48.7,6.6,-58.8,-42.4,-35.8
+test1,1800,-26.9,-36.9,8.5,-46.9,-32.6,-24.1
